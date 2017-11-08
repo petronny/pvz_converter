@@ -10,7 +10,10 @@ else:
 	sys.exit(-1)
 
 import struct
+mtime = os.path.getmtime(filename)
+userdata=open(filename,'rb')
 bytes=open(filename,'rb').read()
+userdata.close()
 plants=struct.unpack("<L",''.join([bytes[0x330:0x334]]))[0]
 
 if format=='mac' and len(bytes[0x334+plants*0x58:])!=0x44 or format=='windows' and len(bytes[0x334+plants*0x3c:])!=0x44:
@@ -39,5 +42,9 @@ if format=='mac':
 else:
 	plants=[bytes[0x334+i*0x3c:0x334+(i+1)*0x3c] for i in range(plants)]
 plants=[convert(i) for i in plants]
+show(plants[0])
 bytes=bytes[:0x334]+''.join(plants)+bytes[-68:]
-open(filename,'wb').write(bytes)
+userdata=open(filename,'wb')
+userdata.write(bytes)
+userdata.close()
+os.utime(filename,(mtime,mtime))
