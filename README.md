@@ -6,5 +6,5 @@ Convert the saves of Plants vs. Zombies between Windows and Mac version
 	* On Mac, just run `Plants vs. Zombies Game of the Year.app` in this repository. You may want to copy it to `~/Applications` (not `/Applications`).
 
 * For advanced users,
-	* Run `python convert.py user1.dat` to convert the saves from Windows to Mac version.
-	* Run `python convert.py user1.dat windows` to convert the saves from Mac to Windows version.
+	* Run `python convert.py mac user1.dat` to convert the saves from Windows to Mac version.
+	* Run `python convert.py windows user1.dat` to convert the saves from Mac to Windows version.
