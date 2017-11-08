@@ -1,5 +1,8 @@
 Convert the saves of Plants vs. Zombies between Windows and Mac version
 ====
+__PLEASE BACKUP YOUR SAVES BEFORE USING THIS REPOSITORY.__
+
+__USING ANY CONTENT OF THIS REPOSITORY IS ON YOUR OWN RISK.__
 
 * If you installed Plants vs. Zombies via Steam,
 	* On Windows, you need to do nothing.
