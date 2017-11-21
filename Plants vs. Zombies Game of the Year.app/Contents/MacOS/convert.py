@@ -14,6 +14,13 @@ mtime = os.path.getmtime(filename)
 userdata=open(filename,'rb')
 bytes=open(filename,'rb').read()
 userdata.close()
+version=ord(bytes[0])
+
+if version!=12:
+	print('Unsupported userdata version %d' %version)
+	print('Please upload "%s" to somewhere (Google Drive, Dropbox, etc.) and issue its link to https://github.com/petronny/pvz_converter/issues' %filename)
+	sys.exit(-1)
+
 plants=struct.unpack("<L",''.join([bytes[0x330:0x334]]))[0]
 
 if format=='mac' and len(bytes[0x334+plants*0x58:])!=0x44 or format=='windows' and len(bytes[0x334+plants*0x3c:])!=0x44:
