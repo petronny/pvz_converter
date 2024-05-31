@@ -22,10 +22,8 @@ if version!=12:
 	sys.exit(-1)
 
 plants=struct.unpack("<L",_bytes[0x330:0x334])[0]
-
-if format=='mac' and len(_bytes[0x334+plants*0x58:])!=0x44 or format=='windows' and len(_bytes[0x334+plants*0x3c:])!=0x44:
-	print('Incorrect input format')
-	sys.exit(-1)
+if format == 'mac': plants_size = plants*0x58
+else: plants_size = plants*0x3c
 
 def convert(plants):
 	if format=='mac':
@@ -50,7 +48,7 @@ else:
 	plants=[_bytes[0x334+i*0x3c:0x334+(i+1)*0x3c] for i in range(plants)]
 plants=[convert(i) for i in plants]
 show(plants[0])
-_bytes=_bytes[:0x334]+b''.join(plants)+_bytes[-0x44:]
+_bytes=_bytes[:0x334]+b''.join(plants)+_bytes[0x334+plants_size:]
 userdata=open(filename,'wb')
 userdata.write(_bytes)
 userdata.close()
