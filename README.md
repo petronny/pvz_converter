@@ -36,10 +36,6 @@ but on Windows, it is:
 00000000|00000000|
 ```
 
-This tool will assert that there are exactly `0x44` bytes after the data of last plant.
-If the assertion is passed, it will convert the format for each plant.
-
 ## Known issue
 
-* Doesn't support Zombatar since the script asserts that there are exactly `0x44` bytes after the data of last plant.
 * If your default Python is Python 2, please use `Plants vs. Zombies Game of the Year.app/Contents/MacOS/convert2.py` to replace `Plants vs. Zombies Game of the Year.app/Contents/MacOS/convert.py`.
