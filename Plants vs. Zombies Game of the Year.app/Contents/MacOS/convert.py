@@ -1,7 +1,7 @@
 #!/bin/python
+import argparse
 import os
 import struct
-import argparse
 import sys
 
 
