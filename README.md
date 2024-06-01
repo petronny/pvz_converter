@@ -38,4 +38,5 @@ but on Windows, it is:
 
 ## Known issue
 
-* If your default Python is Python 2, please use `Plants vs. Zombies Game of the Year.app/Contents/MacOS/convert2.py` to replace `Plants vs. Zombies Game of the Year.app/Contents/MacOS/convert.py`.
+* If your default Python is Python 2, please use `Plants vs. Zombies Game of the Year.app/Contents/MacOS/run2.sh` to replace `Plants vs. Zombies Game of the Year.app/Contents/MacOS/run.sh`.  
+And the Python 2 version doesn't support Zombatar.
